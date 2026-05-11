@@ -12,7 +12,7 @@ form::before {
 
 .search-frame {
     position: relative;
-    width: 650px;
+    width: 550px;
     height: 100px;
 }
 
@@ -31,12 +31,12 @@ form::before {
 
     color: white !important;
     font-family: 'Retrotech' !important;
-    font-size: 32px !important;
+    font-size: 28px !important;
 }
 
 .select-frame {
     position: relative;
-    width: 210px;
+    width: 180px;
     height: 100px;
     display: flex;
     flex-direction: row;
@@ -61,4 +61,209 @@ form::before {
     margin-left: 10px;
     position: absolute;
     top: 20px;
+}
+
+.select-frame select {
+    width: 100%;
+    height: 100%;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: white;
+    font-family: 'Retrotech';
+    font-size: 24px;
+    font-weight: 50;
+    text-align: left;
+    margin-left: 60px;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 50%;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.search-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: url('../gamelib-assets/border1.svg') no-repeat center;
+    background-size: 100% 100%;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+.select-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: url('../gamelib-assets/border2.svg') no-repeat center;
+    background-size: 100% 100%;
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+#search {
+    width: 320px;
+    height: 45px;
+    font-size: 16px;
+    padding: 0 12px;
+}
+
+#add {
+    width: 170px;
+    margin-top: 20px;
+}
+
+select option {
+    color: rgb(46, 12, 87);
+}
+
+#search1 {
+    position: absolute;
+    width: 7%;
+    top: 28px;
+    left: 15px;
+}
+
+#search {
+    margin-left: 50px;
+}
+
+#halaman2 {
+    gap: 100px;
+}
+
+.topgame-list {
+    display: grid;
+    grid-template-columns: repeat(3, 280px);
+
+    gap: 80px 120px;
+
+    justify-content: center;
+
+    padding-bottom: 100px;
+}
+
+.game-card {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#listgame {
+    max-width: 1200px;
+    margin: auto 0;
+
+    height: 600px;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    padding-right: 10px;
+}
+
+.game-card h4 {
+    color: white;
+    font-family: 'Retrotech';
+    font-weight: 200;
+    font-size: 28px;
+    margin: 0;
+    margin-top: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    text-align: left;
+
+}
+
+.game-card p {
+    color: white;
+    font-family: 'Retrotech';
+    font-weight: 50;
+    font-size: 18px;
+    margin: 0;
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.game-card h4,
+.game-card p {
+    width: 100%;
+    text-align: left;
+    margin-left: -60px;
+}
+
+.topgame-list {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.topgame-list.fade-out {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.topgame-list.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.frame {
+  position: relative;
+  width: 360px;
+  height: 225px;
+  overflow: hidden;
+}
+
+.frame img {
+    margin-left: 10px;
+    margin-top: 11px;
+    width: 95%;
+    height: 91%;
+    object-fit: cover;
+}
+
+.frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url('../Home-Assets/card-border.svg') no-repeat center;
+  background-size: contain;
+
+  pointer-events: none;
+}
+
+#listgame::-webkit-scrollbar {
+    width: 0;
+}
+
+#actionbut {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-left: -250px;
+    margin-top: 20px;
+    transform: scale(1);
+}
+
+#actionbut img:hover {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    transform: scale(1.1);
 }

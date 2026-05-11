@@ -81,11 +81,15 @@ if (!$result) {
 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
     <div class="game-card">
         <div class="frame">
-            <img src="Uploads/<?= $row['cover_image'] ?>" alt="<?= $row['nama_game'] ?>">
+            <img src="../Uploads/<?= $row['cover_image'] ?>" alt="<?= $row['nama_game'] ?>">
         </div>
 
         <h4><?= $row['nama_game'] ?></h4>
         <p><?= $row['genre'] ?: 'No Genre' ?></p>
+        <div id="actionbut">
+            <img src="gamelib-assets/edit.svg" alt="">
+            <img src="gamelib-assets/delete.svg" alt="">
+        </div>
     </div>
 <?php } ?>
 <div id="pagination-wrapper">

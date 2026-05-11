@@ -72,11 +72,13 @@ pegiSelect.addEventListener("change", function () {
     fetchGames();
 });
 
-sortSelect.addEventListener("change", function () {
-    currentFilter.sort = this.value;
-    currentFilter.page = 1;
-    fetchGames();
-});
+if (sortSelect) {
+    sortSelect.addEventListener("change", function () {
+        currentFilter.sort = this.value;
+        currentFilter.page = 1;
+        fetchGames();
+    });
+}
 
 function changePage(p) {
     currentFilter.page = p;

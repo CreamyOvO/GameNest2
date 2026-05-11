@@ -186,7 +186,7 @@ include "includes/koneksi.php";
                 <div class="game-card">
 
                     <div class="frame">
-                        <img src="Uploads/<?= $row['cover_image'] ?>" 
+                        <img src="../Uploads/<?= $row['cover_image'] ?>" 
                             alt="<?= $row['nama_game'] ?>">
                     </div>
 

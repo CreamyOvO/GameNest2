@@ -1,7 +1,63 @@
 <?php
-
 session_start();
-include '../Includes/koneksi.php';
+include "../Includes/koneksi.php";
+
+// ambil dropdown
+$genres = mysqli_query($conn, "SELECT * FROM genres");
+$pegi = mysqli_query($conn, "SELECT * FROM ratingumur");
+
+// ambil input
+$search = $_GET['search'] ?? '';
+$genreFilter = $_GET['genre'] ?? '';
+$pegiVal = $_GET['pegi'] ?? '';
+$sort = $_GET['sort'] ?? 'name';
+
+// base query
+$query = "
+SELECT g.*, GROUP_CONCAT(ge.nama_genre SEPARATOR ', ') as genre
+FROM games g
+LEFT JOIN game_genre gg ON g.id_game = gg.id_game
+LEFT JOIN genres ge ON gg.id_genre = ge.id_genre
+";
+
+$where = [];
+
+if ($search != '') {
+    $search = mysqli_real_escape_string($conn, $search);
+    $where[] = "g.nama_game LIKE '%$search%'";
+}
+
+if ($genreFilter != '') {
+    $where[] = "gg.id_genre = " . (int)$genreFilter;
+}
+
+if ($pegiVal != '') {
+    $where[] = "g.id_rating_umur = " . (int)$pegiVal;
+}
+
+if (count($where) > 0) {
+    $query .= " WHERE " . implode(" AND ", $where);
+}
+
+$query .= " GROUP BY g.id_game";
+
+if ($sort == "popular") {
+    $query .= " ORDER BY g.popularity DESC";
+} else {
+    $query .= " ORDER BY g.nama_game ASC";
+}
+
+$result = mysqli_query($conn, $query);
+
+if (!$result) {
+    die("ERROR: " . mysqli_error($conn));
+}
+?>
+
+<?php
+?>
+
+<?php
 
 $id_user = $_SESSION['user_id'];
 
@@ -66,11 +122,11 @@ $userData = mysqli_fetch_assoc($queryUser);
                 <form method="GET" action="" class="search-bar" onsubmit="return false;">
 
                     <div class="search-frame">
-                        <img src="gamelib-assets/search.svg" alt="" id="search1">
+                        <img src="../gamelib-assets/search.svg" alt="" id="search1">
                         <input type="text" id="search" name="search" placeholder="Cari Games..." autocomplete="off">
                     </div>
                     <div class="select-frame">
-                        <img src="gamelib-assets/swrod.svg" alt="" id="sword">
+                        <img src="../gamelib-assets/swrod.svg" alt="" id="sword">
                         <select id="genre" name="genre">
                             <option value="">Genre</option>
                             <?php while($g = mysqli_fetch_assoc($genres)) { ?>
@@ -82,7 +138,7 @@ $userData = mysqli_fetch_assoc($queryUser);
                     </div>
 
                     <div class="select-frame">
-                        <img src="gamelib-assets/pegi12.svg" alt="" id="pegi1">
+                        <img src="../gamelib-assets/pegi12.svg" alt="" id="pegi1">
                         <select id="pegi" name="pegi">
                             <option value="">PEGI</option>
                             <?php while($p = mysqli_fetch_assoc($pegi)) { ?>
@@ -92,18 +148,37 @@ $userData = mysqli_fetch_assoc($queryUser);
                             <?php } ?>
                         </select>
                     </div>
-
-                    <div class="select-frame">
-                        <img src="gamelib-assets/sort.svg" alt="" id="sort1">
-                        <select id="sort" name="sort">
-                            <option value="name">Name (A-Z)</option>
-                            <option value="popular">Popular</option>
-                        </select>
-                    </div>
-
+                    <a href="#"><img src="dashboard-assets/addgame.svg" alt="" id="add"></a>
                 </form>
+                <div id="listgame">
+                    <div class="topgame-list">
+
+                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+
+                            <div class="game-card">
+
+                                <div class="frame">
+                                    <img src="../Uploads/<?= $row['cover_image'] ?>" 
+                                        alt="<?= $row['nama_game'] ?>">
+                                </div>
+
+                                <h4><?= $row['nama_game'] ?></h4>
+
+                                <p><?= $row['genre'] ?: 'No Genre' ?></p>
+                                <div id="actionbut">
+                                    <img src="gamelib-assets/edit.svg" alt="">
+                                    <img src="gamelib-assets/delete.svg" alt="">
+                                </div>
+                            </div>
+
+                        <?php } ?>
+
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
 </body>
+<script src="../Js/fetch3.js"></script>
 </html>
