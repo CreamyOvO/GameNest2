@@ -17,6 +17,7 @@ $userData = mysqli_fetch_assoc($queryUser);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Library</title>
     <link rel="stylesheet" href="../css/dashboardadmin.css">
+    <link rel="stylesheet" href="../css/gamelibeditor.css">
 </head>
 <body>
     <div id="atas">
@@ -62,8 +63,47 @@ $userData = mysqli_fetch_assoc($queryUser);
                 </div>
             </nav>
             <div id="halaman3">
+                <form method="GET" action="" class="search-bar" onsubmit="return false;">
 
+                    <div class="search-frame">
+                        <img src="gamelib-assets/search.svg" alt="" id="search1">
+                        <input type="text" id="search" name="search" placeholder="Cari Games..." autocomplete="off">
+                    </div>
+                    <div class="select-frame">
+                        <img src="gamelib-assets/swrod.svg" alt="" id="sword">
+                        <select id="genre" name="genre">
+                            <option value="">Genre</option>
+                            <?php while($g = mysqli_fetch_assoc($genres)) { ?>
+                                <option value="<?= $g['id_genre'] ?>">
+                                    <?= $g['nama_genre'] ?>
+                                </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+                    <div class="select-frame">
+                        <img src="gamelib-assets/pegi12.svg" alt="" id="pegi1">
+                        <select id="pegi" name="pegi">
+                            <option value="">PEGI</option>
+                            <?php while($p = mysqli_fetch_assoc($pegi)) { ?>
+                                <option value="<?= $p['id_ratingumur'] ?>">
+                                    <?= $p['nama_rating'] ?>
+                                </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+                    <div class="select-frame">
+                        <img src="gamelib-assets/sort.svg" alt="" id="sort1">
+                        <select id="sort" name="sort">
+                            <option value="name">Name (A-Z)</option>
+                            <option value="popular">Popular</option>
+                        </select>
+                    </div>
+
+                </form>
             </div>
+        </div>
     </div>
 </body>
 </html>

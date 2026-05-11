@@ -268,3 +268,61 @@ aside p {
 #section a {
     text-decoration: none;
 }
+
+.select-frame select {
+    width: 100%;
+    height: 100%;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: white;
+    font-family: 'Retrotech';
+    font-size: 32px;
+    font-weight: 50;
+    text-align: left;
+    margin-left: 60px;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 50%;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.search-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: url('../gamelib-assets/border1.svg') no-repeat center;
+    background-size: 100% 100%;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+.select-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: url('../gamelib-assets/border2.svg') no-repeat center;
+    background-size: 100% 100%;
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+#search {
+    width: 320px;
+    height: 45px;
+    font-size: 16px;
+    padding: 0 12px;
+}
