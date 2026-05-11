@@ -1,0 +1,604 @@
+@font-face {
+  font-family: 'Retrotech';
+  src: url('fonts/RETROTECH.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Retroica';
+  src: url('fonts/Retroica.ttf') format('truetype');
+}
+
+#header {
+    background-color: #1E234B;
+}
+
+header {
+    padding: 90px 85px 0 85px;
+    position: relative;
+}
+
+header img {
+    width: 55%;
+    margin-left: -10px;
+}
+
+header p {
+    font-size: 18px;
+    margin-left: 10px;
+    color: white;
+    font-family: 'Retroica';
+    max-width: 45%;
+}
+
+#buttoncari {
+    cursor: pointer;
+    width: 220px;
+    height: 150px;
+    font-family: 'Retrotech';
+    font-size: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: url(../Home-Assets/button.svg) no-repeat center;
+    background-size: contain;
+    text-shadow:
+    2px 0 0 #005990,
+    -2px 0 0 #005990,
+    0 2px 0 #005990,
+    0 -2px 0 #005990,
+    2px 2px 0 #005990,
+    -2px -2px 0 #005990,
+    2px -2px 0 #005990,
+    -2px 2px 0 #005990;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url('../Home-Assets/Vector.svg') repeat;
+  opacity: 1;
+
+  pointer-events: none;
+  z-index: 4;
+}
+
+#gambarbg {
+  position: absolute;
+  inset: 0;
+
+  background: url('../Home-Assets/image\ 1.png') center/cover no-repeat;
+  width: 100%;
+  height: 700px;
+  margin-top: -110px;
+
+  z-index: 0;
+}
+
+#gradientbg {
+  position: absolute;
+  inset: 0;
+
+  background: url('../Home-Assets/Group\ 83.svg') no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 800px;
+  margin-top: -110px;
+
+  z-index: 1;
+}
+
+header > *:not(#gambarbg):not(#gradientbg):not(#linedist) {
+  position: relative;
+  z-index: 3;
+}
+
+#linedist {
+    margin-top: 10px;
+    width: 100%;
+  position: absolute;
+  inset: 0;
+
+  background: url('../Home-Assets/Vector\ 1.svg') no-repeat center;
+    background-size: contain;
+
+  pointer-events: none;
+
+  z-index: 4;
+  transform: scale(1.5);
+}
+
+#hero1 {
+    position: relative;
+    margin-top: -100px;
+    height: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #6000D5;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#hero1 h3 {
+    margin: 0;
+    margin-top: 180px;
+    margin-bottom: 50px;
+    color: white;
+    font-family: 'Retrotech';
+    font-size: 28px;
+    font-weight: 200;
+}
+
+#card1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.gambar {
+    width: 28%;
+  transition: all 0.3s ease;
+}
+
+#card1 .gambar2:hover {
+  transform: scale(1.05) translateY(-5px);
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+#header {
+  clip-path: ellipse(100% 100% at 50% 5%);
+}
+
+#gradasi2 {
+  position: absolute;
+  inset: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.1);
+
+  background: url('../Home-Assets/gradasi2.svg') no-repeat center;
+  background-size: cover;
+
+  z-index: -2;
+  pointer-events: none;
+}
+
+#bintik1 {
+  position: absolute;
+  inset: 0;
+
+  background: url('../Home-Assets/bintik.svg') no-repeat center;
+  background-size: contain;
+
+  opacity: 1;
+  top: 200px;
+
+  z-index: -3;
+}
+
+.blocky{
+    position: absolute;
+    inset: 0;
+    top: 500px;
+
+    z-index: -1;
+    width: 15%;
+}
+
+#blocky1 {
+    top: 20px;
+}
+
+#blocky2 {
+    top: 20px;
+    transform: scalex(-1);
+    left: 1290px;
+}
+
+#blocky3 {
+    top: 650px;
+    transform: scale(1, -1);
+}
+
+#blocky4 {
+    transform: scale(-1);
+    top: 650px;
+    left: 1290px;
+}
+
+#ornamen1 {
+    position: absolute;
+    inset: 0;
+    top: 110px;
+    left: 485px;
+    width: 35%;
+}
+
+.star {
+    position: absolute;
+    width: 10%;
+    inset: 0;
+}
+
+#star1 {
+    top: 150px;
+    left: 80px;
+}
+
+#star2 {
+    top: 620px;
+    left: 1300px;
+    transform: scale(-1);
+}
+
+#ornamen3{
+    position: absolute;
+    width: 100%;
+    top: 1500px;
+}
+
+#content {
+    min-height: 3100px;
+    height: auto;
+  background:
+    linear-gradient(to bottom, 
+    rgba(35,34,79,0.7) 0%, 
+    rgba(16,17,38,1) 190%
+    ),
+    url('../Home-Assets/bintik2.svg'),
+    url('../Home-Assets/cloud.png'),
+    #23224F;
+    background-repeat: repeat, repeat, repeat,repeat;
+    background-size: auto, auto, auto, auto;
+    padding-top: 550px;
+}
+
+.frame {
+  position: relative;
+  width: 300px;
+  height: 180px;
+  overflow: hidden;
+  transform: scale(1.3);
+}
+
+.frame img {
+    margin-left: 10px;
+    margin-top: 11px;
+  width: 93%;
+  height: 90%;
+  object-fit: cover;
+}
+
+.frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url('../Home-Assets/card-border.svg') no-repeat center;
+  background-size: contain;
+
+  pointer-events: none;
+}
+
+.game-card h4 {
+    color: white;
+    font-family: 'Retrotech';
+    font-weight: 200;
+    font-size: 32px;
+    margin: 0;
+    margin-top: 55px;
+    margin-left: -30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+
+}
+
+.game-card {
+    transition: transform 0.5s ease;
+}
+
+.game-card:hover {
+    transform: scale(0.9);
+}
+
+.game-card p {
+    color: white;
+    font-family: 'Retrotech';
+    font-weight: 200;
+    font-size: 24px;
+    margin: 0;
+    margin-top: 10px;
+    margin-left: -30px;
+}
+
+.topgame-list {
+    gap: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.topgame {
+    padding: 0 60px 0 85px;
+    display: flex;
+    flex-direction: row;
+    gap: 66px;
+}
+
+#title3 {
+    flex: 0 0 250px;
+    max-width: 600px;
+}
+
+#title3 h3 {
+    margin: 0;
+    color: white;
+    font-family: 'Retrotech';
+    font-weight: 200;
+    font-size: 40px;
+    margin-top: 5px;
+    white-space: nowrap;
+}
+
+#title3 p {
+    margin: 0;
+    margin-top: 20px;
+    color:  white;
+    font-family: 'Retroica';
+    font-weight: 200;
+    font-size: 28px;
+    max-width: 350px;
+}
+
+.game-card {
+    transform: scale(0.85);
+}
+
+#ornamen4 {
+    position: absolute;
+    width: 90%;
+    display: flex;
+    left: 80px;
+    margin-top: 200px;
+}
+
+#lainnya a {
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    width: 220px;
+    height: 150px;
+    font-family: 'Retrotech';
+    font-size: 22px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow:
+    2px 0 0 #300090,
+    -2px 0 0 #300090,
+    0 2px 0 #300090,
+    0 -2px 0 #300090,
+    2px 2px 0 #300090,
+    -2px -2px 0 #300090,
+    2px -2px 0 #300090,
+    -2px 2px 0 #300090;
+    z-index: 0;
+    left: 1190px;
+}
+
+#lainnya a span {
+    transform: translateX(-20px);
+}
+
+#lainnya a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: url(../Home-Assets/more.svg) no-repeat center;
+    background-size: contain;
+    z-index: -1;
+}
+
+.learn {
+    padding: 0 65px 0 85px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 400px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#interact {
+    max-width: 600px;
+}
+
+#interact h3 {
+    color: white;
+    font-family: 'Retroica';
+    font-weight: 200;
+    font-size: 48px;
+    margin: 0;
+}
+
+#interact p {
+    margin: 0;
+    margin-top: 20px;
+    color: white;
+    font-family: 'Retroica';
+    font-weight: 200;
+    font-size: 24px;
+}
+
+.learn img {
+    width: 60%;
+    margin-top: -30px;
+}
+
+#see a {
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    width: 220px;
+    height: 150px;
+    font-family: 'Retrotech';
+    font-size: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: url(../Home-Assets/see.svg) no-repeat center;
+    background-size: contain;
+    text-shadow:
+    2px 0 0 #300090,
+    -2px 0 0 #300090,
+    0 2px 0 #300090,
+    0 -2px 0 #300090,
+    2px 2px 0 #300090,
+    -2px -2px 0 #300090,
+    2px -2px 0 #300090,
+    -2px 2px 0 #300090;
+    z-index: 0;
+}
+
+#ornamen5 {
+    position: absolute;
+    width: 90%;
+    left: 80px;
+    margin-top: 150px;
+}
+
+#title5 h3 {
+    color: white;
+    font-family: 'Retrotech';
+    font-size: 52px;
+    font-weight: 300;
+    margin: 0;
+}
+
+#title5 p {
+    color: white;
+    font-family: 'Retrotech';
+    font-size: 28px;
+    margin-top: 40px;
+}
+
+#title5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 280px;
+}
+
+#more2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#more2 h3 {
+    color: white;
+    font-family: 'Retrotech';
+    font-size: 24px;
+    font-weight: 200;
+}
+
+#more2 img {
+    width: 2.5%;
+}
+
+footer {
+    position: relative;
+    background-color: #101126;
+    display: flex;
+    flex-direction: row;
+    padding: 30px 85px 0 85px;
+    justify-content: space-between;
+}
+
+#kanan {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#logo2 {
+    width: 110%;
+}
+
+#sosmed {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+#sosmed img {
+    width: 80%;
+}
+
+#kanan p {
+    color: white;
+    font-family: 'Retroica';
+}
+
+#halaman {
+    display: flex;
+    flex-direction: column;
+}
+
+#halaman h3 {
+    color: #8485CB;
+    font-size: 32px;
+    font-family: 'Retrotech';
+    font-weight: 200;
+    margin: 0;
+}
+
+#halaman a {
+    color: white;
+    font-size: 24px;
+    font-family: 'Retrotech';
+    text-decoration: none;
+    font-weight: 200;
+    margin-top: 20px;
+}
+
+#lainnya4 {
+    display: flex;
+    flex-direction: column;
+}
+
+#lainnya4 h3 {
+    color: #8485CB;
+    font-size: 32px;
+    font-family: 'Retrotech';
+    font-weight: 200;
+    margin: 0;
+}
+
+#lainnya4 a {
+    color: white;
+    font-size: 24px;
+    font-family: 'Retrotech';
+    text-decoration: none;
+    font-weight: 200;
+    margin-top: 20px;
+}

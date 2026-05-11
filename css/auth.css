@@ -1,0 +1,368 @@
+@font-face {
+  font-family: 'Retrotech';
+  src: url('fonts/RETROTECH.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Retroica';
+  src: url('fonts/Retroica.ttf') format('truetype');
+}
+
+
+body {
+  margin: 0;
+  background: #0f1123;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background:
+    url(../auth-assets/gradient1.svg),
+    linear-gradient(to bottom,
+  rgba(6, 7, 19, 0.8),
+  rgba(6, 7, 19, 0.8)
+    ),
+    url(../auth-assets/bg1.png);
+    background-position: center, center, center;
+    background-size: cover, cover, cover;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    padding: 10px;
+    width: 1200px;
+    height: 95%;
+    background: url("../auth-assets/border1.svg") no-repeat center;
+    background-size: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    align-items: center;
+}
+
+.signup {
+    display: flex;
+    flex-direction: column;
+    padding: 0 80px 80px 80px;
+    width: 35%;
+    opacity: 0;
+}
+
+.signup form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup form label {
+    color: white;
+    font-weight: 100;
+    font-family: 'Retrotech';
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.signup form .input1 {
+    width: 100%;
+    padding: 15px 16px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    color: white;
+
+    background:
+        linear-gradient(rgba(144, 124, 124, 0.08), rgba(255,255,255,0.08)) padding-box,
+        linear-gradient(90deg, #ffffff33, #b9b9b900) border-box;
+
+    backdrop-filter: blur(10px);
+    margin-bottom: 15px;
+}
+
+#title1 {
+    font-family: 'Retrotech';
+    background: linear-gradient(90deg, #ffffff, #7a7a7a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 200;
+    font-size: 38px;
+}
+
+#agreebox {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkbox-wrap p {
+    color: white;
+    font-family: 'Retrotech';
+    font-weight: 0;
+    font-size: 15px;
+}
+
+.checkbox-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transform: scale(0.9);
+  margin-left: -15px;
+}
+
+.checkbox-wrap input {
+  display: none;
+}
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 2px solid white;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05), rgba(255,255,255,0.05)) padding-box,
+    linear-gradient(90deg, #5f9cff, #a66cff) border-box;
+
+  backdrop-filter: blur(6px);
+  position: relative;
+}
+
+.checkbox-wrap input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 4px;
+  height: 8px;
+
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+#daftar {
+    padding: 20px 35px;
+    font-size: 32px;
+    color: white;
+    font-weight: 100;
+    font-family: 'Retrotech';
+    background-color: none;
+    border: none;
+    background: url('../auth-assets/Frame\ 69.svg') no-repeat center;
+    background-size: contain;
+      text-shadow:
+    -2px -2px 0 #2b2f5a,
+     2px -2px 0 #2b2f5a,
+    -2px  2px 0 #2b2f5a,
+     2px  2px 0 #2b2f5a,
+    0px -2px 0 #2b2f5a,
+    0px  2px 0 #2b2f5a,
+   -2px  0px 0 #2b2f5a,
+    2px  0px 0 #2b2f5a;
+}
+
+.input1:focus {
+  outline: none;
+
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.12), rgba(255,255,255,0.12)) padding-box,
+    linear-gradient(90deg, #7aa2ff, #ffffff) border-box;
+
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.607);
+}
+
+.fb {
+    width: 40px;
+    height: 40px;
+    background: url(../auth-assets/fb.png) no-repeat center;
+    background-size: 105%;
+    border-radius: 100px;
+}
+
+.google {
+    width: 40px;
+    height: 40px;
+    background: url(../auth-assets/google.png) no-repeat center;
+    background-size: 105%;
+    border-radius: 100px;
+}
+
+.xs {
+    width: 40px;
+    height: 40px;
+    background: url(../auth-assets/x.png) no-repeat center;
+    background-size: 105%;
+    border-radius: 100px;
+}
+
+#sosmed {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+#title3 {
+    color: white;
+    font-family: 'Retrotech';
+    font-weight: 0;
+    text-align: center;
+}
+
+.signin {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.signin form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signin form label {
+    color: white;
+    font-weight: 100;
+    font-family: 'Retrotech';
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.signin form .input1 {
+    width: 100%;
+    padding: 15px 16px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    color: white;
+
+    background:
+        linear-gradient(rgba(144, 124, 124, 0.08), rgba(255,255,255,0.08)) padding-box,
+        linear-gradient(90deg, #ffffff33, #b9b9b900) border-box;
+
+    backdrop-filter: blur(10px);
+    margin-bottom: 15px;
+}
+
+#title2 {
+    font-family: 'Retrotech';
+    background: linear-gradient(90deg, #ffffff, #7a7a7a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 200;
+    font-size: 38px;
+}
+
+#masuk {
+    padding: 20px 50px;
+    font-size: 32px;
+    color: white;
+    font-weight: 100;
+    font-family: 'Retrotech';
+    background-color: none;
+    border: none;
+    background: url('../auth-assets/Frame\ 69.svg') no-repeat center;
+    background-size: contain;
+    margin-top: 20px;
+      text-shadow:
+    -2px -2px 0 #2b2f5a,
+     2px -2px 0 #2b2f5a,
+    -2px  2px 0 #2b2f5a,
+     2px  2px 0 #2b2f5a,
+    0px -2px 0 #2b2f5a,
+    0px  2px 0 #2b2f5a,
+   -2px  0px 0 #2b2f5a,
+    2px  0px 0 #2b2f5a;
+}
+
+#sosmed2 {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+#title4 {
+    color: white;
+    font-family: 'Retrotech';
+    font-weight: 0;
+    text-align: center;
+}
+
+#pindahbox {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: url('../auth-assets/border2.svg') no-repeat left;
+    background-size: 95%;
+    margin-top: -10px;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+#pindahbox h3 {
+    margin: 0;
+    margin-left: -50px;
+    font-size: 42px;
+    background: linear-gradient(90deg, #ffffff, #949494);
+    font-family: 'Retrotech';
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 100;
+
+}
+
+#pindahbox a {
+    pointer-events: auto;
+    font-size: 38px;
+    margin-left: -50px;
+    text-decoration: none;
+    color: white;
+    font-weight: 100;
+    font-family: 'Retrotech';
+    background: url('../auth-assets/button1.svg') no-repeat center;
+    background-size: contain;
+    padding: 40px 40px;
+      text-shadow:
+    -2px -2px 0 #2b2f5a,
+     2px -2px 0 #2b2f5a,
+    -2px  2px 0 #2b2f5a,
+     2px  2px 0 #2b2f5a,
+    0px -2px 0 #2b2f5a,
+    0px  2px 0 #2b2f5a,
+   -2px  0px 0 #2b2f5a,
+    2px  0px 0 #2b2f5a;
+}
+
+#pindahbox {
+  transition: all 0.6s ease;
+}
+
+.container.signup-mode #pindahbox {
+    left: 623px;
+}
+
+.signup {
+  transition: opacity 0.5s ease;
+}
+
+.signin {
+  transition: opacity 0.5s ease;
+}
+
+.container.signup-mode .signup {
+  opacity: 1;
+}
+
+.container.signup-mode .signin {
+  opacity: 0;
+}
